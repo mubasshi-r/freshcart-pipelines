@@ -16,8 +16,20 @@ blocks:
       - prepare_data
     downstream_blocks:
       - save_results
+      - evaluate_model
   - uuid: save_results
     type: data_exporter
     upstream_blocks:
       - train_model
+    downstream_blocks: []
+  - uuid: evaluate_model
+    type: transformer
+    upstream_blocks:
+      - train_model
+    downstream_blocks:
+      - log_metrics_summary
+  - uuid: log_metrics_summary
+    type: data_exporter
+    upstream_blocks:
+      - evaluate_model
     downstream_blocks: []

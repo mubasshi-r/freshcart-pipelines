@@ -1,0 +1,14 @@
+{
+    "pipeline": "iris_classifier",
+    "status": "success",
+    "metrics": [
+        {
+            "metric": "accuracy",
+            "value": 0.9333333333333333
+        },
+        {
+            "metric": "total_samples",
+            "value": 30.0
+        }
+    ]
+}
